@@ -1,0 +1,74 @@
+/*
+This small exercise just showcases the basic stuff.
+*/
+
+1) *** Source the new software stack. ***
+   
+   Sourcing the new software stack is done by running the command:
+   
+      $ source /comm/bin/modules.sh
+   
+   This will load lmod with MODULEPATH set to the new stack.
+   You can try the command:
+
+      $ env | grep MODULEPATH
+
+2) *** Try out you new toy ***
+
+   Try running the following command to see the available stack:
+
+      $ ml av
+
+   This is shorthand for "module avail", and shows the currently available and load modules.
+   Now try to load a module:
+
+      $ ml gcc
+
+   This is shorthand for "module load gcc", and will load the default gcc (marked with 'D').
+   If you run 'ml av' again you should see that 'gcc' has been loaded (marked with 'L').
+   To see that the correct version of gcc has been loaded type:
+
+      $ gcc --version
+
+   Try to unload gcc again with:
+
+      $ ml unload gcc
+
+   Check that gcc was correctly unloaded:
+
+      $ ml av
+      $ gcc --version
+
+3) *** Fast swap ***
+
+   Load gcc 7.2.0 and openmpi 2.2.1:
+
+      $ ml gcc/7.2.0
+      $ ml openmpi/2.2.1
+   
+   Check openmpi back-end:
+
+      $ mpicc --version
+
+   Now try to "fast switch" compiler:
+
+      $ ml intel
+
+   Watch lmod also change the loaded openmpi package. Check this:
+
+      $ mpicc --version
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+9) *** Other useful commands ***
+      
+      $ ml purge          (unload all loaded modules)
