@@ -1,5 +1,7 @@
 /*
 This small exercise just showcases the basic stuff.
+
+Mostly you will learn to load and unload modules using lmod.
 */
 
 1) *** Source the new software stack. ***
@@ -54,8 +56,9 @@ This small exercise just showcases the basic stuff.
 
       $ ml intel
 
-   Watch lmod also change the loaded openmpi package. Check this:
-
+   Watch lmod change gcc with intel and also change the loaded openmpi package. Check this:
+      
+      $ icc --version
       $ mpicc --version
    
    
