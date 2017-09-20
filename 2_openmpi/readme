@@ -1,0 +1,45 @@
+/*
+In this exercise you learn how to compile an mpi program,
+and how to run on the front-end (which you shouldn't do, so shame on you!)
+*/
+
+0) *** Remember ... ***
+   
+   ... to source the module system (if you forgot how, go back and look).
+   
+1) *** Load and compile with gcc and openmpi ***
+   
+   Load gcc and openmpi:
+
+      $ ml gcc
+      $ ml openmpi/2.2.1
+
+   Compile with mpi-compiler:
+
+      $ mpicc -o hello_world_mpi_gcc.x main.c
+   
+   Run program:
+
+      $ mpirun -n 2 ./hello_world_mpi_gcc.x
+
+   Here '-n 2' sets the number of processes. 
+   You can try cranking it up, but don't go to high. 
+   Keep below 20 today.
+
+2) *** Fast swap to intel ***
+
+   Fast swap to intel compiler.
+
+      $ ml intel
+
+   Oh shi*! Inactive module ??
+   Openmpi get in-activated as there is no openmpi/2.2.1 for the intel compiler to swap to,
+   and lmod cannot accces the one loaded for gcc, and inactivates it. 
+   Load the intel openmpi/3.0.0 manually by typing:
+
+      $ ml openmpi/3.0.0
+
+   Then compile and run the program:
+
+      $ mpicc -o hello_world_mpi_intel.x main.c
+      $ mpirun -n 2 ./hello_world_mpi_intel.x

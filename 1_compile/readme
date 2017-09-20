@@ -13,15 +13,15 @@ In this exercise you will compile a small C program with different compilers loa
    Load the gcc compiler, compile and run the program.
 
       $ ml gcc/7.2.0
-      $ gcc -o hello_world.x main.c
-      $ ./hello_world.x
+      $ gcc -o hello_world_gcc.x main.c
+      $ ./hello_world_gcc.x
 
    Watch the output.
    Load a different version of the gcc compiler (and be amazed by the fast swapping of modules):
       
       $ ml gcc/6.3.0
-      $ gcc -o hello_world.x main.c
-      $ ./hello_world.x
+      $ gcc -o hello_world_gcc.x main.c
+      $ ./hello_world_gcc.x
 
    Watch the output.
 
@@ -30,8 +30,10 @@ In this exercise you will compile a small C program with different compilers loa
    Load intel compiler, compile and run the program:
    
       $ ml intel
-      $ icc -o hello_world.x main.c
-      $ ./hello_world.x
+      $ icc -o hello_world_intel.x main.c
+      $ ./hello_world_intel.x
 
    Watch the output.
+
+
    
