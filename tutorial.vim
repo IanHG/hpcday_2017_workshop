@@ -8,7 +8,7 @@ endif
 
 " define keywords
 " syntax keyword tcgKeyword autogenerate
-syntax match commandLine "\$.*$"
+syntax match commandLine "^ *\$.*$"
 highlight link commandLine Keyword
 
 " define comments

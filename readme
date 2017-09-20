@@ -1,4 +1,31 @@
+/*
+This is the main readme file.
+*/
+
 Hi, this is a small workshop on compiling and submitting jobs using
 the new Grendel-S software stack :) Enjoy...
 
+To get vim to use syntax highlighting for readme files (like this one) type (inside vim):
+   : syntax on
+   : source tutorial.vim
 
+Every line prepended with '$' means it a console command,
+so you should probably type it in to the console. Like this:
+
+   $ ls 
+
+All examples are meant to be typed in :)
+
+The examples are the following:
+   
+   0_basic
+   1_compile
+   2_openmpi
+   3_slurm
+   4_gpm
+
+They are in principle meant to be followed in order,
+but you rae free to do them in any order you want.
+
+                        "Good luck, have fun!"
+                                            - Ian

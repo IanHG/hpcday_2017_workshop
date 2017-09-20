@@ -61,17 +61,8 @@ Mostly you will learn to load and unload modules using lmod.
       $ icc --version
       $ mpicc --version
    
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-9) *** Other useful commands ***
+4) *** Other useful commands ***
+
+   These are some useful lmod commands:
       
-      $ ml purge          (unload all loaded modules)
+      $ ml purge         # (unload all loaded modules)
