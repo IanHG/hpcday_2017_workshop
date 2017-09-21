@@ -1,0 +1,40 @@
+-- HELLO WORLD gpk script
+
+-- Description of the gpk
+description = [[
+BEST PROGRAM EVER!
+]]
+
+-- Definition section
+definition = {
+   pkgname = "hello_world",
+   pkggroup = "apps",
+   pkgfamily = "hello_world",
+}
+
+-- Required types
+prerequisite = { }
+
+-- Build section
+build = {
+   -- Source of package
+   source = lfs.currentdir() .. "/hello_world.tar.gz",
+   -- Build command
+   command = [[
+      export CC=gcc
+
+      $CC -o hello_world.x main.c
+         
+      mkdir <pkginstall>/bin
+      cp hello_world.x <pkginstall>/bin/.
+   ]],
+}
+
+-- Lmod section
+lmod = {
+   help = [[This module loads a hello_world program :).]],
+}
+
+--[[
+# vi:syntax=lua
+--]]

@@ -1,0 +1,74 @@
+/*
+In this small exercise we will see how the Grendel Package Manager
+can be used to create a local software using the main stack as a parent.
+*/
+
+1) *** Load GPM ***
+
+   First we need to load the GPM package manager. This will load the 'gpm-package' script into your PATH.
+
+      $ ml gpm
+      $ gpm-package --version
+
+2) *** Look in the config.lua ***
+
+   The file 'config.lua' is the config file for the local stack we are creating.
+   It is written in Lua code (as is GPM itself).
+
+   It sets up different stuff, e.g. where the stack should be installed (current working directory).
+
+3) *** Initialize the local stack ***
+
+   Initialize the local stack by running the initialize command of the gpm-package using your local config file and 
+   setting the main Grendel-S software stack as parent stack.
+
+      $ gpm-package -c config.lua initialize --parantstack="/comm/bin/modules.sh"
+
+4) *** Source the local stack ***
+
+   You can now source your local stack by running 
+   (assuming you are standing in the 4_gpm directory where you initialized the stack):
+
+      $ source ./bin/modules.sh
+   
+5) *** Install a package ***  
+
+   Packages are installed from .gpk (Grendel PacKage) files, which are Lua code files describing how get the source code and compile it and so on.
+   
+   To install a package in your local stack, you need to run the gpm-package script with the install command 
+   giving it a .gpk file you want to install. 
+
+      $ gpm-package install --gpkf hello_world.gpk --pkv 1.0.0 --prereq="gcc/7.1.0"
+
+   This will install the hello_world program using the gcc/7.1.0 module as a prerequirement.
+
+6) *** Checkout your new stack ***
+
+   Check out your new awesome local software stack:
+
+      $ ml av
+
+   Try to load your new module (notice how it also loads gcc/7.1.0 as you set it as a prereq):
+      
+      $ ml hello_world
+
+   Your hello world program has now been added to PATH. Try to run it:
+
+      $ hello_world.x
+
+7) *** Advanced: Make hello_world heirarchial ***
+
+   Try to install "another" hello world package using gcc/6.3.0 by running:
+
+      $ $ gpm-package install --gpkf hello_world.gpk --pkv 1.0.0 --prereq="gcc/6.3.0"
+
+   Noticed a problem? It overwrited the old hello world package we had installed :C
+
+   We will now try to install the hello world package heirarchically (hello_world_heirarchical.gpk).
+   To install the two hello world packages using the heirarchical .gpk file using gcc/7.1.0 and gcc/6.3.0 do:
+
+      $ gpm-package install --gpkf hello_world_heirarchical.gpk --pkv 1.0.0 --prereq="compiler=gcc/7.1.0"
+      $ gpm-package install --gpkf hello_world_heirarchical.gpk --pkv 1.0.0 --prereq="compiler=gcc/6.3.0"
+
+
+   
