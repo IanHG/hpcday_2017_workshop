@@ -18,7 +18,7 @@ All examples are meant to be typed in :)
 
 The examples are the following:
    
-   0_basic
+   0_lmod
    1_compile
    2_openmpi
    3_slurm
