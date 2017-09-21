@@ -12,7 +12,7 @@ and how to run on the front-end (which you shouldn't do, so shame on you!)
    Load gcc and openmpi:
 
       $ ml gcc
-      $ ml openmpi/2.2.1
+      $ ml openmpi/2.1.0
 
    Compile with mpi-compiler:
 
@@ -24,7 +24,7 @@ and how to run on the front-end (which you shouldn't do, so shame on you!)
 
    Here '-n 2' sets the number of processes. 
    You can try cranking it up, but don't go to high. 
-   Keep below 20 today.
+   Keep below 20 today :).
 
 2) *** Fast swap to intel ***
 
@@ -35,9 +35,9 @@ and how to run on the front-end (which you shouldn't do, so shame on you!)
    Oh shi*! Inactive module ??
    Openmpi get in-activated as there is no openmpi/2.2.1 for the intel compiler to swap to,
    and lmod cannot accces the one loaded for gcc, and inactivates it. 
-   Load the intel openmpi/3.0.0 manually by typing:
+   Load the intel openmpi/2.1.1 manually by typing:
 
-      $ ml openmpi/3.0.0
+      $ ml openmpi/2.1.1
 
    Then compile and run the program:
 

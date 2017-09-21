@@ -35,5 +35,9 @@ In this exercise you will compile a small C program with different compilers loa
 
    Watch the output.
 
+3) *** Advanved: Use 'ldd' to see dynamic libraries ***
 
-   
+   Try to use the 'ldd' command on all the executables to see which dynamic libraries are linked.
+
+   $ ldd hello_world_gcc.x
+

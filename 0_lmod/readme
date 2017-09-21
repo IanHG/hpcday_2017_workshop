@@ -66,3 +66,5 @@ Mostly you will learn to load and unload modules using lmod.
    These are some useful lmod commands:
       
       $ ml purge         # (unload all loaded modules)
+      $ ml list          # (list all currently loaded modules)
+      $ ml help <module> # (display help message for specific module)

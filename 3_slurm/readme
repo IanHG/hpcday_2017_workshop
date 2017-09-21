@@ -1,0 +1,48 @@
+/* 
+In this exercise we learn how to submit a job to the slurm queue system.
+
+We will see how the 'srun' command will handle resources for mpi jobs.
+*/
+
+1) *** Take a look at the submit script ***
+   
+   It is located in the file 'submit.sh'. 
+   Open it using your favorite terminal editor.
+
+2) *** Compile the small program ***
+
+   Compile the small test program.
+   
+      $ ml gcc/7.1.0
+      $ ml openmpi/2.1.1
+      $ mpicc -o hello_world.x main.c
+
+   You can also try a different setup if you so desire.
+
+3) *** Submitting jobs ***
+
+   You submit a jobscript by calling 'sbatch' with the script as an argument:
+      
+      $ sbatch submit.sh
+
+   Try to do that now. After the job has run, you will see a file called
+   'slurm-<jobid>.out'. This file collects all output written to stdout or stderr
+   from the slurm job. Open the file an notice that our two MPI ranks where run on
+   the same node. Try changing the number of nodes by changing the line:  
+   
+      '#SBATCH --nodes 1' ->  '#SBATCH --nodes 2'
+
+   Resubmit your slurm script. Open the new slurm output file. Here you can see
+   that the job has now run on two different nodes. Also notice that we didn't change
+   any arguments to 'srun', we only changed the number of nodes at the top of our script
+   and 'srun' automatically adjusted.
+
+4) *** Other useful SLURM script settings ***
+
+   # Send email 
+   #SBATCH --mail-type=END,FAIL           # Send and email when job ends or if it fails.
+   #SBATCH --mail-user=<your-email-here>  # Insert your email here.
+
+   # Write stdout/stderr output, %j is replaced with the job number
+   #SBATCH --output slurm-%j.txt
+   #SBATCH --error  slurm-%j.txt
