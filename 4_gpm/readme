@@ -70,5 +70,7 @@ can be used to create a local software using the main stack as a parent.
       $ gpm-package install --gpkf hello_world_heirarchical.gpk --pkv 1.0.0 --prereq="compiler=gcc/7.1.0"
       $ gpm-package install --gpkf hello_world_heirarchical.gpk --pkv 1.0.0 --prereq="compiler=gcc/6.3.0"
 
+   Now try to load a gcc and your new hello world. Try to run the program. After that try to fast swap to the other gcc and run hello world.
+
 
    
