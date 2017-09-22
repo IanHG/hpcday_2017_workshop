@@ -32,8 +32,12 @@ and how to run on the front-end (which you shouldn't do, so shame on you!)
 
       $ ml intel
 
-   Oh shi*! Inactive module ??
-   Openmpi get in-activated as there is no openmpi/2.2.1 for the intel compiler to swap to,
+   Oh shi*! Inactive module ?? Run:
+
+      $ ml av
+   
+   Notice there is no openmpi loaded yet for the intel compiler.
+   Openmpi gets in-activated as there is no openmpi/2.1.0 for the intel compiler to swap to,
    and lmod cannot accces the one loaded for gcc, and inactivates it. 
    Load the intel openmpi/2.1.1 manually by typing:
 
@@ -43,3 +47,5 @@ and how to run on the front-end (which you shouldn't do, so shame on you!)
 
       $ mpicc -o hello_world_mpi_intel.x main.c
       $ mpirun -n 2 ./hello_world_mpi_intel.x
+
+

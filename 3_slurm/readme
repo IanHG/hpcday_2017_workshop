@@ -39,10 +39,13 @@ We will see how the 'srun' command will handle resources for mpi jobs.
 
 4) *** Other useful SLURM script settings ***
 
-   # Send email 
-   #SBATCH --mail-type=END,FAIL           # Send and email when job ends or if it fails.
-   #SBATCH --mail-user=<your-email-here>  # Insert your email here.
+   Useful headers:
 
-   # Write stdout/stderr output, %j is replaced with the job number
-   #SBATCH --output slurm-%j.txt
-   #SBATCH --error  slurm-%j.txt
+      # Send email 
+      #SBATCH --mail-type=END,FAIL           # Send and email when job ends or if it fails.
+      #SBATCH --mail-user=<your-email-here>  # Insert your email here.
+
+      # Write stdout/stderr output, %j is replaced with the job number
+      #SBATCH --output slurm-%j.txt     # write stdout to a given file.
+      #SBATCH --error  slurm-%j.txt     # write stderr to a given file.
+

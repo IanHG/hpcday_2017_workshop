@@ -28,6 +28,11 @@ Mostly you will learn to load and unload modules using lmod.
 
    This is shorthand for "module load gcc", and will load the default gcc (marked with 'D').
    If you run 'ml av' again you should see that 'gcc' has been loaded (marked with 'L').
+   Try running the command:
+
+      $ env | grep PATH
+
+   Notice gcc has been added to your PATH.
    To see that the correct version of gcc has been loaded type:
 
       $ gcc --version
@@ -35,18 +40,19 @@ Mostly you will learn to load and unload modules using lmod.
    Try to unload gcc again with:
 
       $ ml unload gcc
-
+   
    Check that gcc was correctly unloaded:
 
       $ ml av
+      $ env | grep PATH
       $ gcc --version
 
 3) *** Fast swap ***
 
-   Load gcc 7.2.0 and openmpi 2.2.1:
+   Load gcc 7.1.0 and openmpi 2.1.1:
 
-      $ ml gcc/7.2.0
-      $ ml openmpi/2.2.1
+      $ ml gcc/7.1.0
+      $ ml openmpi/2.1.1
    
    Check openmpi back-end:
 
@@ -68,3 +74,8 @@ Mostly you will learn to load and unload modules using lmod.
       $ ml purge         # (unload all loaded modules)
       $ ml list          # (list all currently loaded modules)
       $ ml help <module> # (display help message for specific module)
+
+5) *** Word of Wisdom: Be on the safe side ***
+
+   When loading modules inside scripts, always load with full module name, i.e. <module>/<version>.
+   This will ensure that nothing breaks if a new default is set!
