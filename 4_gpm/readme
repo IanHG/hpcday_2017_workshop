@@ -22,7 +22,7 @@ can be used to create a local software using the main stack as a parent.
    Initialize the local stack by running the initialize command of the gpm-package using your local config file and 
    setting the main Grendel-S software stack as parent stack.
 
-      $ gpm-package -c config.lua initialize --parantstack="/comm/bin/modules.sh"
+      $ gpm-package -c config.lua initialize --parentstack="/comm/bin/modules.sh"
 
 4) *** Source the local stack ***
 
