@@ -1,3 +1,8 @@
 # Ignore executables
 *.x
 *.out
+
+# ignore local stack in 4_gpm
+4_gpm/bin
+4_gpm/modulefiles
+4_gpm/build
