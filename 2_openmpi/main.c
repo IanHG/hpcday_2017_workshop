@@ -9,6 +9,8 @@
 
 #if defined __INTEL_COMPILER
    #define COMPILER intel-__INTEL_COMPILER
+#elif defined __clang__
+   #define COMPILER clang-__clang_major__.__clang_minor__.__clang_patchlevel__
 #elif defined __GNUC__
    #define COMPILER gcc-__GNUC__.__GNUC_MINOR__.__GNUC_PATCHLEVEL__
 #elif defined __PGI
